@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="w-full px-6 py-8 max-w-6xl">
+  <h2 class="text-2xl font-semibold text-slate-800 mb-4">About</h2>
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <div class="lg:col-span-2 space-y-4">
+      <p class="text-slate-700 leading-relaxed">
+        This system offers decision support for neuro-oncology by estimating survival rate and recommending a treatment strategy based on key clinical variables. It is designed for professional use and to complement—not replace—clinical judgment.
+      </p>
+      <div class="bg-white rounded-lg shadow p-5">
+        <h3 class="font-semibold text-slate-800 mb-2">What the system does</h3>
+        <ul class="list-disc pl-6 text-slate-700 space-y-1">
+          <li>Processes 7 structured inputs (4 numeric, 3 categorical)</li>
+          <li>Predicts survival rate (regression) and treatment (classification)</li>
+          <li>Provides class probabilities to show recommendation confidence</li>
+        </ul>
+      </div>
+      <div class="bg-white rounded-lg shadow p-5">
+        <h3 class="font-semibold text-slate-800 mb-2">Clinical positioning</h3>
+        <ul class="list-disc pl-6 text-slate-700 space-y-1">
+          <li>Use as a second-opinion tool alongside multidisciplinary review</li>
+          <li>Supports rapid triage and documentation of rationale</li>
+          <li>Configurable to local pathways and risk thresholds</li>
+        </ul>
+      </div>
+    </div>
+    <aside class="space-y-4">
+      <div class="metric-tile">
+        <div class="text-sm text-slate-600">Model</div>
+        <div class="text-slate-900 font-semibold">Multi-output NN</div>
+      </div>
+      <div class="metric-tile">
+        <div class="text-sm text-slate-600">Framework</div>
+        <div class="text-slate-900 font-semibold">PyTorch + FastAPI</div>
+      </div>
+      <div class="metric-tile">
+        <div class="text-sm text-slate-600">Latency</div>
+        <div class="text-slate-900 font-semibold">~10–50 ms (CPU)</div>
+      </div>
+      <div class="metric-tile">
+        <div class="text-sm text-slate-600">Data residency</div>
+        <div class="text-slate-900 font-semibold">Local only</div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+    <div class="bg-white rounded-lg shadow p-5">
+      <h3 class="font-semibold text-slate-800 mb-2">Privacy & Security</h3>
+      <ul class="list-disc pl-6 text-slate-700 space-y-1">
+        <li>No data leaves the server; no external APIs</li>
+        <li>No persistence of patient identifiers</li>
+        <li>Stateless inference; logs contain no PHI by default</li>
+      </ul>
+    </div>
+    <div class="bg-white rounded-lg shadow p-5">
+      <h3 class="font-semibold text-slate-800 mb-2">Usage Guidance</h3>
+      <ul class="list-disc pl-6 text-slate-700 space-y-1">
+        <li>Confirm inputs match clinical notes and imaging</li>
+        <li>Use class probabilities to understand uncertainty</li>
+        <li>Document rationale when deviating from suggestion</li>
+      </ul>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+
